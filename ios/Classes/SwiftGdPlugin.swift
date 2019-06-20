@@ -33,13 +33,13 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
         let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         //print(session.delegate)
         let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-            //print(data)
-            print("PRINTED DATA OUTSIDE MAIN.ASYNC")
+            print(data as Any)
+            print("PRINTED DATA")
             if data != nil {
                 let string = String(bytes: data!, encoding: .utf8)
                 completionHandler(string!)
             } else {
-                completionHandler("{\"person\": {\"displayName\": \"IT FAILED\"}}");
+                completionHandler("{\"person\": {\"displayName\": \"IT FAILED\"}}")
             }
         })
         task.resume()
