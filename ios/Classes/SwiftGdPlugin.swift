@@ -45,7 +45,7 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
         task.resume()
     }
     
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
+    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Swift.Void) {
         
         print("connection will send request for authentication challenge")
         
