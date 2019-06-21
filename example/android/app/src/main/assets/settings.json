@@ -1,0 +1,8 @@
+{
+  "GDLibraryMode": "GDEnterprise",
+  "GDApplicationID": "com.csg.cs.cschat.apac.android.pta",
+  "GDApplicationVersion": "1.0.0.0",
+  "GDConsoleLogger": [
+    "GDFilterErrors_"
+  ]
+}
