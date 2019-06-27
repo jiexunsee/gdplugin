@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'gd_plugin'
-  s.version          = '0.0.10'
+  s.version          = '0.0.11'
   s.summary          = 'A new Flutter plugin.'
   s.description      = <<-DESC
 A new Flutter plugin.

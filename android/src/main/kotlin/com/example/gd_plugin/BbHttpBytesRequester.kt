@@ -12,11 +12,9 @@ import java.io.ByteArrayOutputStream
 import com.good.gd.apache.http.message.BasicHeader
 
 
+class BbHttpBytesRequester : AsyncTask<String, Void, ByteArray>() {
 
-
-class BbHttpRequester : AsyncTask<String, Void, String>() {
-
-    override fun doInBackground(vararg url: String): String {
+    override fun doInBackground(vararg url: String): ByteArray {
         val httpclient = GDHttpClient()
 //        httpclient.disableHostVerification();
 //        httpclient.disablePeerVerification();
@@ -44,11 +42,11 @@ class BbHttpRequester : AsyncTask<String, Void, String>() {
                 buf.write(result.toByte().toInt())
                 result = bis.read()
             }
-            return buf.toString("UTF-8")
+            return buf.toByteArray()
 
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        return ""
+        return ByteArray(0)
     }
 }

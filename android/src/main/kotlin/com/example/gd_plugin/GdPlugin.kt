@@ -22,9 +22,18 @@ class GdPlugin: MethodCallHandler {
       val url = call.argument<String>("url")
       bbHttpRequester.execute(url) // retrieves a stream, converted to a string
       val str = bbHttpRequester.get()
-      println("RESULT FROM BB: $str")
+      println("DEEBUG: RESULT FROM BB (in plugin): $str")
       result.success(str)
-    } else if (call.method == "httpGet") {
+    } else if (call.method == "bbHttpGetBytes") {
+      val bbHttpRequester = BbHttpBytesRequester()
+      val url = call.argument<String>("url")
+      bbHttpRequester.execute(url) // retrieves a stream, converted to a string
+      val str = bbHttpRequester.get()
+      println("DEEBUG: got byte stream from bb (in plugin): $str")
+      result.success(str)
+    }
+
+    else if (call.method == "httpGet") {
       result.success("hardcoded output from android")
     } else {
       result.notImplemented()
