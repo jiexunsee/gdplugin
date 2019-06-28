@@ -12,15 +12,23 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
         if (call.method == "getPlatformVersion") {
             result("iOS " + UIDevice.current.systemVersion)
         } else if (call.method == "bbHttpGet") {
-            print("inside ios method call")
-            let arguments = call.arguments as! NSDictionary // INFO: get arguments
+            print("inside ios get call")
+            let arguments = call.arguments as! NSDictionary
             let url = arguments["url"] as! String
             
             requestData(url: url){output in
                 result(output)
             }
-        } else if (call.method == "httpGet") {
-            print("inside ios method call")
+        } else if (call.method == "bbHttpGetBytes") {
+            print("inside ios get bytes call")
+            let arguments = call.arguments as! NSDictionary
+            let url = arguments["url"] as! String
+            
+            requestDataBytes(url: url){output in
+                result(output)
+            }
+        }
+        else if (call.method == "httpGet") {
             result("hardcoded output from ios")
         }
     }
@@ -31,15 +39,37 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
         let nsUrl = URL(string: url)
         let urlRequest = URLRequest(url: nsUrl!)
         let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
-        //print(session.delegate)
         let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             print(data as Any)
-            print("PRINTED DATA")
-            if data != nil {
-                let string = String(bytes: data!, encoding: .utf8)
-                completionHandler(string!)
+            print("printed data above in requestData")
+//            if data != nil {
+//                let string = String(bytes: data!, encoding: .utf8)
+//                completionHandler(string!)
+//            } else {
+//                completionHandler("{\"person\": {\"displayName\": \"IT FAILED\"}}")
+//            }
+            if let data = data {
+                let string = String(bytes: data, encoding: .utf8)
+                completionHandler(string ?? "From gd_plugin in iOS: failed to convert data into string")
             } else {
                 completionHandler("{\"person\": {\"displayName\": \"IT FAILED\"}}")
+            }
+        })
+        task.resume()
+    }
+    
+    func requestDataBytes(url : String, completionHandler:@escaping ([UInt8]) -> ()) {
+        // Open the request using NSURLConnection or NSURLSession
+        let nsUrl = URL(string: url)
+        let urlRequest = URLRequest(url: nsUrl!)
+        let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
+        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            print(data as Any)
+            print("printed data above in requestDataBytes")
+            if let data = data {
+                completionHandler([UInt8](data))
+            } else {
+                completionHandler([UInt8]())
             }
         })
         task.resume()
