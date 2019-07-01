@@ -25,6 +25,7 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
             let url = arguments["url"] as! String
             
             requestDataBytes(url: url){output in
+                let output = UIImageJPEGRepresentation(output, 1.0)
                 result(output)
             }
         }
@@ -42,24 +43,34 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
         let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             print(data as Any)
             print("printed data above in requestData")
-//            if data != nil {
-//                let string = String(bytes: data!, encoding: .utf8)
-//                completionHandler(string!)
-//            } else {
-//                completionHandler("{\"person\": {\"displayName\": \"IT FAILED\"}}")
-//            }
             if let data = data {
                 let string = String(bytes: data, encoding: .utf8)
                 completionHandler(string ?? "From gd_plugin in iOS: failed to convert data into string")
             } else {
-                completionHandler("{\"person\": {\"displayName\": \"IT FAILED\"}}")
+                completionHandler("From gd_plugin in iOS: no data")
             }
         })
         task.resume()
     }
     
-    func requestDataBytes(url : String, completionHandler:@escaping ([UInt8]) -> ()) {
-        // Open the request using NSURLConnection or NSURLSession
+//    func requestDataBytes(url : String, completionHandler:@escaping ([UInt8]) -> ()) {
+//        // Open the request using NSURLConnection or NSURLSession
+//        let nsUrl = URL(string: url)
+//        let urlRequest = URLRequest(url: nsUrl!)
+//        let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
+//        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+//            print(data as Any)
+//            print("printed data above in requestDataBytes")
+//            if let data = data {
+//                completionHandler([UInt8](data))
+//            } else {
+//                completionHandler([UInt8]())
+//            }
+//        })
+//        task.resume()
+//    }
+    
+    func requestDataBytes(url : String, completionHandler:@escaping (UIImage) -> ()) {
         let nsUrl = URL(string: url)
         let urlRequest = URLRequest(url: nsUrl!)
         let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
@@ -67,9 +78,10 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
             print(data as Any)
             print("printed data above in requestDataBytes")
             if let data = data {
-                completionHandler([UInt8](data))
+                let img = UIImage(data: data)
+                completionHandler(img!)
             } else {
-                completionHandler([UInt8]())
+                completionHandler(UIImage())
             }
         })
         task.resume()
