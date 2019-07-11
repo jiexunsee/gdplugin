@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2fef4e5b-3c4d-403e-9ae3-7a0347b03eb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpBytesRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpBytesRequester.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/android/src/main/kotlin/com/example/gd_plugin/BbHttpBytesRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/android/src/main/kotlin/com/example/gd_plugin/BbHttpBytesRequester.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/ios/Classes/SwiftGdPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/gd_plugin/ios/Classes/SwiftGdPlugin.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftGdPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftGdPlugin.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/gd_plugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/gd_plugin.podspec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -25,7 +34,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/gd_plugin.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="240">
               <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -55,8 +64,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftGdPlugin.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            <state relative-caret-position="675">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -64,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            <state relative-caret-position="150">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="e#31#293#0" expanded="true" />
               </folding>
@@ -76,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="405">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#31#301#0" expanded="true" />
               </folding>
@@ -117,8 +135,8 @@
         <option value="$PROJECT_DIR$/ios/Classes/SwiftGdPlugin.swift" />
         <option value="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
-        <option value="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt" />
         <option value="$PROJECT_DIR$/lib/gd_plugin.dart" />
+        <option value="$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/ios/gd_plugin.podspec" />
       </list>
@@ -135,13 +153,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="gd_plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="gd_plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gd_plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gd_plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gd_plugin" type="b2602c69:ProjectViewProjectNode" />
@@ -170,6 +192,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -248,13 +271,6 @@
     <entry file="file://$PROJECT_DIR$/android/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Libraries/flutter/bin/cache/pkg/sky_engine/lib/typed_data/typed_data.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -271,7 +287,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/gd_plugin.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="240">
           <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -279,20 +295,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt">
+    <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftGdPlugin.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="e#31#293#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="675">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/BbHttpRequester.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#31#301#0" expanded="true" />
           </folding>
@@ -306,10 +326,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftGdPlugin.swift">
+    <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/gd_plugin/GdPlugin.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="150">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#293#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

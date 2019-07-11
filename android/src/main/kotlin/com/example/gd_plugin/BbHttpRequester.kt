@@ -12,9 +12,11 @@ import java.io.ByteArrayOutputStream
 import com.good.gd.apache.http.message.BasicHeader
 
 
+class BbHttpRequester(callback: OnTaskCompletion<String>) : AsyncTask<String, Void, String>() {
 
+    private val callback = callback
+    var mException: Exception? = null
 
-class BbHttpRequester : AsyncTask<String, Void, String>() {
 
     override fun doInBackground(vararg url: String): String {
         val httpclient = GDHttpClient()
@@ -22,7 +24,7 @@ class BbHttpRequester : AsyncTask<String, Void, String>() {
 //        httpclient.disablePeerVerification();
         val request = HttpGet(url[0])
 
-        print("DEEBUG: DOING BB HTTP REQUEST WITHOUT HEADERS")
+        println("DEBUG: doing gd http request without headers")
 
 ////        val headers = arrayOf( BasicHeader("X-User-Id", "Ffmr8gbpRqx7EHP5T"),
 ////            BasicHeader("X-Auth-Token", "jHXEkXPrXUqD6iR8lpSykjvP3ExCtGmT8_81StPyZyG"))
@@ -34,8 +36,6 @@ class BbHttpRequester : AsyncTask<String, Void, String>() {
         try {
             val response = httpclient.execute(request)
             val stream = response.entity.content
-            println("response was executed")
-            println(stream.toString())
 
             val bis = BufferedInputStream(stream)
             val buf = ByteArrayOutputStream()
@@ -48,7 +48,16 @@ class BbHttpRequester : AsyncTask<String, Void, String>() {
 
         } catch (e: IOException) {
             e.printStackTrace()
+            mException = e
         }
         return ""
+    }
+
+    override fun onPostExecute(result: String) {
+        if (mException == null) {
+            callback.onSuccess(result)
+        } else {
+            callback.onFailure(mException!!)
+        }
     }
 }

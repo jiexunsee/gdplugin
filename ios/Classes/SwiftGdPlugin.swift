@@ -24,7 +24,7 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
             let arguments = call.arguments as! NSDictionary
             let url = arguments["url"] as! String
             
-            requestDataBytes(url: url){output in
+            requestDataImage(url: url){output in
                 let output = UIImageJPEGRepresentation(output, 1.0)
                 result(output)
             }
@@ -70,13 +70,13 @@ public class SwiftGdPlugin: NSObject, FlutterPlugin, URLSessionDelegate {
 //        task.resume()
 //    }
     
-    func requestDataBytes(url : String, completionHandler:@escaping (UIImage) -> ()) {
+    func requestDataImage(url : String, completionHandler:@escaping (UIImage) -> ()) {
         let nsUrl = URL(string: url)
         let urlRequest = URLRequest(url: nsUrl!)
         let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             print(data as Any)
-            print("printed data above in requestDataBytes")
+            print("printed data above in requestDataImage")
             if let data = data {
                 let img = UIImage(data: data)
                 completionHandler(img!)
